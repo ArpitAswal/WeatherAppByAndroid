@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FFF307"
+    android:layout_gravity="center_vertical"
+    android:id="@+id/rootView"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible" />
+
+    <SearchView
+        android:id="@+id/searchViewID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/searchviewshape"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search..."
+        android:searchIcon="@drawable/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:id="@+id/cityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweathersans_medium"
+        android:text="Location not found"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewID"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="15dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:drawableLeftCompat="@drawable/loctaion" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="-15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityTextView"/>
+
+    <TextView
+        android:id="@+id/todayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:textColor="@color/black"
+        android:fontFamily="@font/merriweathersans_bold"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/cityTextView"
+        app:layout_constraintStart_toEndOf="@+id/lottie"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/celciusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="@color/black"
+        android:fontFamily="@font/merriweathersans_semibold"
+        android:textSize="50sp"
+        app:layout_constraintTop_toBottomOf="@+id/todayTextView"
+        app:layout_constraintStart_toEndOf="@+id/lottie"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/centigrade"
+        app:layout_constraintTop_toBottomOf="@+id/todayTextView"
+        app:layout_constraintStart_toEndOf="@+id/celciusTextView"/>
+
+    <TextView
+        android:id="@+id/weatherTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="@font/merriweathersans_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie"
+        android:layout_marginStart="70dp"/>
+
+    <TextView
+        android:id="@+id/maxtempTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:layout_marginStart="100dp"
+        app:layout_constraintStart_toEndOf="@+id/weatherTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/celciusTextView"/>
+
+    <TextView
+        android:id="@+id/mintempTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:layout_marginStart="100dp"
+        app:layout_constraintStart_toEndOf="@+id/weatherTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/maxtempTextView"/>
+
+    <TextView
+        android:id="@+id/dayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:fontFamily="@font/merriweathersans_bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mintempTextView"/>
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/merriweathersans_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayTextView"/>
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:background="@drawable/backgroundshape"
+        android:numColumns="3"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:verticalSpacing="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
