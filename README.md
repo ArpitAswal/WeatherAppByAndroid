@@ -57,4 +57,4 @@ The background dynamically changes to reflect the current weather conditions.
 
 ![Screenshot_2024-06-20-13-17-15-492_com example weatherapp 1](https://github.com/ArpitAswal/WeatherAppByAndroid/assets/87036588/3ee25bf4-0510-44f3-ab25-754ec24675eb)
 
-
+![Screenshot_2024-06-20-13-34-25-631_com example weatherapp 1](https://github.com/ArpitAswal/WeatherAppByAndroid/assets/87036588/8f0c1acc-7e36-4221-be38-b2ff86e9a8b0)
